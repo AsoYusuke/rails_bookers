@@ -1,33 +1,53 @@
-<h2>Books</h2>
+<div class="container-fluid">
+  <h2>Books</h2>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>本のタイトル</th>
-      <th>感想</th>
-      <th colspan= "3"></th>
-    </tr>
-  </thead>
-</table>
+<div class="container-fluid">
+  <div class="row justify-content-around">
+    <table>
+      <thead>
+        <tr>
+          <div class="col-sm-1">
+            <div class="text-center">本のタイトル</div>
+          </div>
+          <div class="col-sm-2">
+            <div class="text-center">感想</div>
+          </div>
+          <div class="col-sm-2" colspan="3"></div>
+          <div class="col-sm-7"></div>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
 
 <tbody>
-  <% @books.each do |book| %>
-    <tr>
-      <p>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
-        <td><%= link_to "show", book_path(book.id) %></td>
-        <td><%= link_to "edit", edit_book_path(book) %></td>
-        <td><%= link_to "destroy", book_path(book), method: :delete %></td>
-      </p>
-    </tr>
-  <% end %>
+  <div class="container-fluid">
+    <div class="row justify-content-around">
+      <% @books.each do |book| %>
+        <tr>
+          <p>
+            <div class="col-sm-1"><%= book.title %></div>
+            <div class="col-sm-2"><%= book.body %></div>
+            <div class="col-sm-2">
+              <%= link_to "show", book_path(book.id) %>
+              <%= link_to "edit", edit_book_path(book) %>
+              <%= link_to "destroy", book_path(book), method: :delete %>
+            </div>
+            <div class="col-sm-7"></div>
+          </p>
+        </tr>
+      <% end %>
+    </div>
+  </div>
 </tbody>
-
+<p>
+</p>
+<div class="container-fluid">
 <h3>New book</h3>
 <%= form_with model:@book, local:true do |f| %>
   <% if @book.errors.any? %>
-    <%= @book.errors.count %> errors prohibited this obj from being saved:<br>
+    <%= @book.errors.count %>errors prohibited this obj from being saved:<br>
       <% @book.errors.full_messages.each do |message| %>
         <%= message %><br>
       <% end %>
@@ -42,3 +62,4 @@
   <%= f.submit '投稿' %>
 
 <% end %>
+</div>
