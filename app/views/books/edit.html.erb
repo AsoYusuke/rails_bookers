@@ -1,8 +1,28 @@
-<h1>Editing Book</h1>
+<div class="my-4">
+ <div class="ml-4">
+  <p class="text-success" id="notice"><%= notice %></p>
+  <h1><storng>Editing Book</storng></h1>
+   <%= form_with model:@book, local:true do |f| %>
+     <% if @book.errors.any? %>
+       <%= @book.errors.count %>errors prohibited this obj from being saved:<br>
+        <% @book.errors.full_messages.each do |message| %>
+          <%= message %><br>
+         <% end %>
+     <% end %>
 
-<form>
+
+   
+   <h5>Title</h5>
+   <%= f.text_field :title %>
+   <h5>Body</h5>
+   <%= f.text_area :body %>
+   <br>
+   <%= f.submit 'Update Book' %>
+  <% end %>
   
-</form>
-
-<%= link_to 'Show', @book, class: "show_#{@book.id}" %> |
-<%= link_to 'Back', books_path, class: "back" %>
+  <div class="mt-2">
+  <%= link_to 'Show', @book, class: "show_#{@book.id}" %> |
+  <%= link_to 'Back', books_path, class: "back" %>
+  </div>
+ </div>
+</div>
