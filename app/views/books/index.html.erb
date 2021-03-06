@@ -8,10 +8,10 @@
       <thead>
         <tr>
           <div class="col-sm-1">
-            <div class="text-center">本のタイトル</div>
+            <div class="text-center">Title:</div>
           </div>
           <div class="col-sm-2">
-            <div class="text-center">感想</div>
+            <div class="text-center">Body:</div></div>
           </div>
           <div class="col-sm-2" colspan="3"></div>
           <div class="col-sm-7"></div>
@@ -53,13 +53,13 @@
       <% end %>
   <% end %>
 
-  <h4>本のタイトル</h4>
+  <h4>Title</h4>
   <%= f.text_field :title %>
 
-  <h4>感想</h4>
+  <h4>Body</h4>
   <%= f.text_area :body %>
 
-  <%= f.submit '投稿' %>
+  <%= f.submit 'Create Book' %>
 
 <% end %>
 </div>
