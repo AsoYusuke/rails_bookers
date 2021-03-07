@@ -1,14 +1,14 @@
 <div class="my-4">
  <div class="ml-4">
-  <p class="text-success" id="notice"><%= notice %></p>
+  
   <h1><storng>Editing Book</storng></h1>
    <%= form_with model:@book, local:true do |f| %>
-     <% if @book.errors.any? %>
-       <%= @book.errors.count %>errors prohibited this obj from being saved:<br>
-        <% @book.errors.full_messages.each do |message| %>
-          <%= message %><br>
-         <% end %>
-     <% end %>
+    <% if @book.errors.any? %>
+    <%= @book.errors.count %> errors prohibited this obj from being saved:<br>
+    <% @book.errors.full_messages.each do |message| %>
+    <%= message %><br>
+    <% end %>
+    <% end %>
 
 
    
